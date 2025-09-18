@@ -1,114 +1,154 @@
 ---
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
-import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
-import Header from '../../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+// Import necessary components and libraries from Astro and local files.
+// Image: Astro's component for optimizing images.
+// getCollection: Astro's function to fetch content from collections (like blog posts).
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+// BaseHead, Footer, FormattedDate, Header: Reusable UI components for the page.
+import BaseHead from "../../components/BaseHead.astro";
+import Footer from "../../components/Footer.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Header from "../../components/Header.astro";
+// SITE_TITLE, SITE_DESCRIPTION: Constants for site metadata.
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+// Fetch all entries from the 'blog' content collection.
+// The '.sort()' method arranges the posts in descending order based on their publication date,
+// so the newest posts appear first.
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <!-- BaseHead component includes common head elements like meta tags, title, etc. -->
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <!-- Internal CSS styles for this specific page. -->
+    <style>
+      /* General styling for the main content area. */
+      main {
+        width: 1400px;
+      }
+      /* Styling for the unordered list that will contain the blog posts. */
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      /* Styling for each list item (each blog post). */
+      ul li {
+        width: calc(25% - 1.5rem);
+      }
+      /* General styling for elements inside a list item. */
+      ul li * {
+        text-decoration: none;
+        transition: 0.2s ease;
+      }
+      /* Special styling for the first blog post to make it stand out. */
+      ul li:first-child {
+        width: 100%;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      /* The image of the first post takes the full width. */
+      ul li:first-child img {
+        width: 100%;
+      }
+      /* Larger title for the first post. */
+      ul li:first-child .title {
+        font-size: 2.369rem;
+      }
+      /* Styling for post images. */
+      ul li img {
+        margin-bottom: 0.5rem;
+        border-radius: 12px;
+      }
+      /* The anchor tag within a list item is a block element. */
+      ul li a {
+        display: block;
+      }
+      /* Styling for the post title. */
+      .title {
+        margin: 0;
+        color: rgb(var(--black));
+        line-height: 1;
+      }
+      /* Styling for the post date. */
+      .date {
+        margin: 0;
+        color: rgb(var(--gray));
+      }
+      /* Hover effects for the post title and date. */
+      ul li a:hover h4,
+      ul li a:hover .date {
+        color: rgb(var(--accent));
+      }
+      /* Hover effect for the post image. */
+      ul a:hover img {
+        box-shadow: var(--box-shadow);
+      }
+      /* Responsive design for smaller screens. */
+      @media (max-width: 720px) {
+        ul {
+          gap: 0.5em;
+        }
+        /* Each post takes the full width on smaller screens. */
+        ul li {
+          width: 100%;
+          text-align: center;
+        }
+        ul li:first-child {
+          margin-bottom: 0;
+        }
+        /* Adjusted title size for the first post on smaller screens. */
+        ul li:first-child .title {
+          font-size: 1.563em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header component for the top of the page. -->
+    <Header />
+    <main>
+      <section>
+        <!-- The list where blog posts will be rendered. -->
+        <ul>
+          {
+            // JavaScript code block to loop through the 'posts' array.
+            // .map() is used to create a new array of HTML elements, one for each post.
+            posts.map((post) => (
+              <li>
+                {/* Link to the individual blog post page. */}
+                <a href={`/blog/${post.id}/`}>
+                  {/* Conditionally render the hero image if it exists. */}
+                  {post.data.heroImage && (
+                    <Image
+                      width={720}
+                      height={360}
+                      src={post.data.heroImage}
+                      alt=""
+                    />
+                  )}
+                  {/* Post title. */}
+                  <h4 class="title">{post.data.title}</h4>
+                  {/* Post publication date, formatted by a component. */}
+                  <p class="date">
+                    <FormattedDate date={post.data.pubDate} />
+                  </p>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+    <!-- Footer component for the bottom of the page. -->
+    <Footer />
+  </body>
 </html>
