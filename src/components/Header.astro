@@ -6,60 +6,170 @@ import HeaderLink from "./HeaderLink.astro";
 
 <header>
   <nav>
-    <h2 style="font-size: 30px;" title={SITE_DESCRIPTION}><a href="/">{SITE_TITLE}</a></h2>
-    <div class="internal-links">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
-      <HeaderLink href="/others">Others</HeaderLink>
+    <h2 class="title" title={SITE_DESCRIPTION}><a href="/">{SITE_TITLE}</a></h2>
+    <button id="menu-toggle" aria-expanded="false" aria-controls="main-navigation">
+      <span class="sr-only">Menu</span>
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+    <div class="nav-links" id="main-navigation">
+      <div class="internal-links">
+        <HeaderLink href="/">Home</HeaderLink>
+        <HeaderLink href="/blog">Blog</HeaderLink>
+        <HeaderLink href="/about">About</HeaderLink>
+        <HeaderLink href="/others">Others</HeaderLink>
+      </div>
+      <!-- <div class="social-links"> -->
+        <!-- The social links can be added here later -->
+      <!-- </div> -->
     </div>
-    <!-- <div class="social-links"> -->
-      <!-- The social links can be added here later -->
-    <!-- </div> -->
   </nav>
 </header>
+
 <style>
   header {
     margin: 0;
     padding: 0 1em;
     background: white;
     box-shadow: 0 2px 8px rgba(var(--black), 5%);
-
-  }
-  h2 {
-    margin: 0 auto 0 150px;
-    font-size: 1em;
   }
 
-  h2 a,
-  h2 a.active {
-    text-decoration: none;
-  }
   nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 1em 0;
   }
+
+  .title {
+    font-size: 1.5em; /* Adjusted for better mobile readability */
+    margin: 0; /* Remove fixed margin */
+  }
+
+  .title a,
+  .title a.active {
+    text-decoration: none;
+  }
+
+  #menu-toggle {
+    display: block; /* Visible on mobile */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5em;
+  }
+
+  #menu-toggle svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .nav-links {
+    display: none; /* Hidden by default on mobile */
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 8px rgba(var(--black), 5%);
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1em;
+  }
+
+  .nav-links.menu-open {
+    display: flex; /* Show when menu-open class is present */
+  }
+
   .internal-links {
-    margin: 0 30rem 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
-  nav a {
-    padding: 1em 0.5em;
+
+  .internal-links a {
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
     color: var(--black);
-    border-bottom: 4px solid transparent;
     text-decoration: none;
+    border-bottom: 1px solid rgba(var(--black), 10%); /* Separator for mobile links */
   }
+
+  .internal-links a:last-child {
+    border-bottom: none;
+  }
+
   nav a.active {
-    text-decoration: none;
     border-bottom-color: var(--accent);
   }
-  .social-links,
-  .social-links a {
-    display: flex;
-  }
-  @media (max-width: 720px) {
-    .social-links {
-      display: none;
+
+  /* Desktop styles */
+  @media (min-width: 768px) {
+    #menu-toggle {
+      display: none; /* Hide hamburger on desktop */
+    }
+
+    .nav-links {
+      position: static;
+      display: flex !important; /* Always show on desktop */
+      flex-direction: row;
+      box-shadow: none;
+      background: none;
+      width: auto;
+      padding-bottom: 0;
+    }
+
+    .internal-links {
+      flex-direction: row;
+      width: auto;
+      margin: 0 30rem 0 0; /* Reintroduce desktop margin */
+    }
+
+    .internal-links a {
+      padding: 1em 0.5em;
+      border-bottom: 4px solid transparent;
+      width: auto;
+    }
+
+    .internal-links a:last-child {
+      border-bottom: 4px solid transparent; /* Reset for desktop */
+    }
+
+    .title {
+      font-size: 1em; /* Revert to original size */
+      margin: 0 auto 0 150px; /* Reintroduce desktop margin */
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggleButton = document.getElementById('menu-toggle');
+    const mainNavigation = document.getElementById('main-navigation');
+
+    if (menuToggleButton && mainNavigation) {
+      menuToggleButton.addEventListener('click', () => {
+        const isExpanded = menuToggleButton.getAttribute('aria-expanded') === 'true';
+        menuToggleButton.setAttribute('aria-expanded', String(!isExpanded));
+        mainNavigation.classList.toggle('menu-open');
+      });
+    }
+  });
+</script>
