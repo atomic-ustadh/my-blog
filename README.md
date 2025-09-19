@@ -68,13 +68,13 @@ The `src/content/` directory contains "collections" of related Markdown and MDX 
 
 ## Getting Started
 
-1. **Clone the repository**
+1. **Create a new Astro Project**
 
    ```bash
    npm create astro@latest -- --template blog
    ```
 
-2. **Install dependencies**
+2. **Install dependencies:** If you skip this step when creating the Project.
 
    ```bash
    npm install
