@@ -86,6 +86,12 @@ The `src/content/` directory contains "collections" of related Markdown and MDX 
    npm run dev
    ```
 
+4. **Build for production**
+
+   ```bash
+   npm run build
+   ```
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -98,9 +104,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-Check out the official [Astro documentation](https://docs.astro.build)
+| `npm run format`          | Format all `.ts`, `.tsx`, `.astro` and `.md` files |
 
 ## Tech Stack
 - [Astro](https://astro.build/)
@@ -110,3 +114,26 @@ Check out the official [Astro documentation](https://docs.astro.build)
 ## Deployment
 
 This site is configured to deploy to [Netlify](https://www.netlify.com/).
+- To deploy a static version of this site:
+Netlify is already configured to host static sites. So no configuration needed.
+
+- To deploy a dynamic version of this site:
+1. Install the @astro/Netlify Adapter
+With the `astro add` command. This will install `@astrojs/netlify` and make the appropriate changes to your `astro.config.mjs` file in one step.
+    ```bash
+    npx astro add netlify
+    ```
+2. Push your code to a Git repository (GitHub, GitLab, Bitbucket).
+3. Create a new site on Netlify and link it to your repository.
+4. Set the build command to `npm run build` and the publish directory to `dist/`.
+    Alternatively, you can create a `netlify.toml` file in the root of your project with the following content:
+    ```toml
+    [build]
+      command = "npm run build"
+      publish = "dist"
+    ```
+5. Click "Deploy Site".
+
+## 👀 Want to learn more?
+Check out the official [Astro documentation](https://docs.astro.build)
+
