@@ -135,6 +135,8 @@ Alternatively, you can create a `netlify.toml` file in the root of your project 
     ```
 5. Click "Deploy Site".
 
+Tech Tuts Deployment? [![Netlify Status](https://api.netlify.com/api/v1/badges/0e980602-116a-41de-b88c-3037ef140f3d/deploy-status)](https://app.netlify.com/projects/techtuts/deploys)
+
 ## 👀 Want to learn more?
 Check out the official [Astro documentation](https://docs.astro.build)
 
