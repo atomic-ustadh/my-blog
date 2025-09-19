@@ -9,45 +9,68 @@
 - ✅ RSS Feed support
 - ✅ Markdown & MDX support
 
-## 📁 Project Structure
+## Project Structure
+
+``` text
+├───.gitignore
+├───astro.config.mjs
+│   ├───consts.ts
+│   ├───content.config.ts
+├───package-lock.json
+├───package.json
+├───README.md
+├───tsconfig.json
+├───dist\
+│   ├───index.html
+├───public\
+│   ├───favicon.svg
+│   └───fonts\
+└───src\
+    ├───consts.ts
+    ├───content.config.ts
+    ├───content.config.ts
+    ├───content.config.ts
+    ├───content.config.ts
+    ├───assets\   --- Static assets like images
+    │   ├───blog-placeholder-about.jpg
+    │   └───earth.png
+    ├───components\ --- Astro/React/Vue/Svelte/Preact components.
+    │   ├───BaseHead.astro
+    │   ├───Footer.astro
+    │   ├───FormattedDate.astro
+    │   ├───Header.astro
+    │   └───HeaderLink.astro
+    ├───content\ --- Markdown and MDX files for blog posts.
+    │   └───blog\
+    │       ├───markdown-style-guide.md
+    │       ├───second-post.md
+    │       ├───third-post copy.md
+    │       ├───using-mdx.mdx
+    │       └───wordpress-installation.md
+    ├───layouts\ --- Layout components to wrap pages.
+    │   └───BlogPost.astro
+    ├───pages\
+    │   ├───about.astro
+    │   ├───index.astro
+    │   ├───others.astro
+    │   ├───rss.xml.js
+    │   └───blog\
+    │       ├───[...slug].astro
+    │       └───index.astro
+    └───styles\
+        └───global.css
 ```
-Directorypublic/
-robots.txt
-favicon.svg
-my-cv.pdf
-Directorysrc/
-Directoryblog/
-post1.md
-post2.md
-post3.md
-Directorycomponents/
-Header.astro
-Button.jsx
-Directoryimages/
-image1.jpg
-image2.jpg
-image3.jpg
-Directorylayouts/
-PostLayout.astro
-Directorypages/
-Directoryposts/
-[post].astro
-about.astro
-index.astro
-rss.xml.js
-Directorystyles/
-global.css
-content.config.ts
-astro.config.mjs
-package.json
-tsconfig.json
-```
+
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+The `src/components/` directory is where the Astro/React/Vue/Svelte/Preact components live.
+The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema.
+
 
 ## Getting Started
 
 1. **Clone the repository**
 
-   ```sh
+   ```bash
    npm create astro@latest -- --template blog
    ```
 
