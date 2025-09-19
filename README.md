@@ -140,3 +140,9 @@ Tech Tuts Deployment? [![Netlify Status](https://api.netlify.com/api/v1/badges/0
 ## 👀 Want to learn more?
 Check out the official [Astro documentation](https://docs.astro.build)
 
+## 👀 About the Author [Visit my website](https://atomicustadh.pages.dev/ "Author's website")
+
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=black)](https://github.com/atomic-ustadh)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=black)](https://linkedin.com/in/atomic-ustadh)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=flat-square&logo=twitter&logoColor=black)](https://x.com/atomicustadh)
+
