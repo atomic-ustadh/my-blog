@@ -1,13 +1,7 @@
-# Astro Starter Kit: Blog
+#  Tech Tuts
+>### Welcome to Tech Tuts, your go-to blog for all things tech! Dive into tutorials, tips, and insights.
 
-```sh
-npm create astro@latest -- --template blog
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-Features:
-
+## 📚 Features:
 - ✅ Minimal styling (make it your own!)
 - ✅ 100/100 Lighthouse performance
 - ✅ SEO-friendly with canonical URLs and OpenGraph data
@@ -15,30 +9,59 @@ Features:
 - ✅ RSS Feed support
 - ✅ Markdown & MDX support
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+## 📁 Project Structure
+```
+Directorypublic/
+robots.txt
+favicon.svg
+my-cv.pdf
+Directorysrc/
+Directoryblog/
+post1.md
+post2.md
+post3.md
+Directorycomponents/
+Header.astro
+Button.jsx
+Directoryimages/
+image1.jpg
+image2.jpg
+image3.jpg
+Directorylayouts/
+PostLayout.astro
+Directorypages/
+Directoryposts/
+[post].astro
+about.astro
+index.astro
+rss.xml.js
+Directorystyles/
+global.css
+content.config.ts
+astro.config.mjs
+package.json
+tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Getting Started
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. **Clone the repository**
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+   ```sh
+   npm create astro@latest -- --template blog
+   ```
 
-Any static assets, like images, can be placed in the `public/` directory.
+2. **Install dependencies**
+
+   ```bash
+   npm install
+    ```
+
+3. **Start the development server**
+
+   ```bash
+   npm run dev
+   ```
 
 ## 🧞 Commands
 
@@ -54,9 +77,13 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
 ## 👀 Want to learn more?
+Check out the official [Astro documentation](https://docs.astro.build)
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Tech Stack
+- [Astro](https://astro.build/)
+- [MDX](https://mdxjs.com/)
+- [Netlify](https://www.netlify.com/)
 
-## Credit
+## Deployment
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+This site is configured to deploy to [Netlify](https://www.netlify.com/).
