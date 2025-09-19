@@ -142,7 +142,7 @@ Check out the official [Astro documentation](https://docs.astro.build)
 
 ## 👀 About the Author [Visit my website](https://atomicustadh.pages.dev/ "Author's website")
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat-square&logo=github&logoColor=black)](https://github.com/atomic-ustadh)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=black)](https://linkedin.com/in/atomic-ustadh)
-[![Twitter(formerly x.com)](https://techtuts.netlify.app/.netlify/images?url=_astro%2Fearth.D_8TggCb.png&w=1020&h=510)](https://x.com/atomicustadh)
+[![GitHub](https://techtuts.netlify.app/_astro/github.Cd6DcTUV.svg)](https://github.com/atomic-ustadh)
+[![LinkedIn](https://techtuts.netlify.app/_astro/linkedin.BsKzz869.svg)](https://linkedin.com/in/atomic-ustadh)
+[![Twitter(formerly x.com)](https://techtuts.netlify.app/_astro/twitter-x.XX-07nhO.svg)](https://x.com/atomicustadh)
 
