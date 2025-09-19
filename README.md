@@ -1,5 +1,5 @@
 #  Tech Tuts
->### Welcome to Tech Tuts, your go-to blog for all things tech! Dive into tutorials, tips, and insights.
+> Welcome to Tech Tuts, your go-to blog for all things tech! Dive into tutorials, tips, and insights.
 
 ## 📚 Features:
 - ✅ Minimal styling (make it your own!)
@@ -14,8 +14,6 @@
 ``` text
 ├───.gitignore
 ├───astro.config.mjs
-│   ├───consts.ts
-│   ├───content.config.ts
 ├───package-lock.json
 ├───package.json
 ├───README.md
@@ -31,23 +29,23 @@
     ├───content.config.ts
     ├───content.config.ts
     ├───content.config.ts
-    ├───assets\   --- Static assets like images
+    ├───assets\   ---> Static assets like images
     │   ├───blog-placeholder-about.jpg
     │   └───earth.png
-    ├───components\ --- Astro/React/Vue/Svelte/Preact components.
+    ├───components\ ---> Astro/React/Vue/Svelte/Preact components.
     │   ├───BaseHead.astro
     │   ├───Footer.astro
     │   ├───FormattedDate.astro
     │   ├───Header.astro
     │   └───HeaderLink.astro
-    ├───content\ --- Markdown and MDX files for blog posts.
+    ├───content\ ---> Markdown and MDX files for blog posts.
     │   └───blog\
     │       ├───markdown-style-guide.md
     │       ├───second-post.md
     │       ├───third-post copy.md
     │       ├───using-mdx.mdx
     │       └───wordpress-installation.md
-    ├───layouts\ --- Layout components to wrap pages.
+    ├───layouts\ ---> Layout components to wrap pages.
     │   └───BlogPost.astro
     ├───pages\
     │   ├───about.astro
@@ -105,6 +103,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 | `npm run format`          | Format all `.ts`, `.tsx`, `.astro` and `.md` files |
+| `npm run lint`            | Lint all `.ts`, `.tsx`, `.astro` and `.md` files |
 
 ## Tech Stack
 - [Astro](https://astro.build/)
@@ -118,7 +117,7 @@ This site is configured to deploy to [Netlify](https://www.netlify.com/).
 Netlify is already configured to host static sites. So no configuration needed.
 
 - To deploy a dynamic version of this site:
-1. Install the @astro/Netlify Adapter
+1. Install the `@astro/Netlify` Adapter
 With the `astro add` command. This will install `@astrojs/netlify` and make the appropriate changes to your `astro.config.mjs` file in one step.
     ```bash
     npx astro add netlify
@@ -126,7 +125,7 @@ With the `astro add` command. This will install `@astrojs/netlify` and make the 
 2. Push your code to a Git repository (GitHub, GitLab, Bitbucket).
 3. Create a new site on Netlify and link it to your repository.
 4. Set the build command to `npm run build` and the publish directory to `dist/`.
-    Alternatively, you can create a `netlify.toml` file in the root of your project with the following content:
+Alternatively, you can create a `netlify.toml` file in the root of your project with the following content:
     ```toml
     [build]
       command = "npm run build"
