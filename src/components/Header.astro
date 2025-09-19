@@ -41,7 +41,6 @@ import HeaderLink from "./HeaderLink.astro";
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1em 0;
   }
 
   .title {
@@ -124,6 +123,7 @@ import HeaderLink from "./HeaderLink.astro";
   @media (min-width: 1024px) {
     nav {
       gap: 2em; /* Add gap for spacing between title and nav links */
+      justify-content: space-around;
     }
     #menu-toggle {
       display: none; /* Hide hamburger on desktop */
@@ -156,7 +156,7 @@ import HeaderLink from "./HeaderLink.astro";
     }
 
     .title {
-      font-size: 1em; /* Revert to original size */
+      font-size: xx-large; /* Make Larger on larger screens */
       /* margin: 0 auto 0 150px; Removed fixed margin */
     }
   }
