@@ -140,10 +140,11 @@ Tech Tuts Deployment? [![Netlify Status](https://api.netlify.com/api/v1/badges/0
 ## 👀 Want to learn more?
 Check out the official [Astro documentation](https://docs.astro.build)
 
-## 👀 About the Author [Visit my website](https://atomicustadh.pages.dev/ "Author's website")
+## 👀 About the Author 
 
+Visit my Portfolio on:
+
+[![My Website](./src/assets/globe.svg)](https://atomicustadh.pages.dev/)
 [![GitHub](./src/assets/github.svg)](https://github.com/atomic-ustadh)
 [![LinkedIn](./src/assets/linkedin.svg)](https://linkedin.com/in/atomic-ustadh)
 [![Twitter(formerly x.com)](./src/assets/twitter-x.svg)](https://x.com/atomicustadh)
-
-[![Heart Icon](https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/icons/heart-fill.svg)](https://github.com/atomic-ustadh/)
