@@ -142,9 +142,8 @@ Check out the official [Astro documentation](https://docs.astro.build)
 
 ## 👀 About the Author [Visit my website](https://atomicustadh.pages.dev/ "Author's website")
 
-[![GitHub](https://techtuts.netlify.app/_astro/github.Cd6DcTUV.svg)](https://github.com/atomic-ustadh)
-[![LinkedIn](https://techtuts.netlify.app/_astro/linkedin.BsKzz869.svg)](https://linkedin.com/in/atomic-ustadh)
-[![Twitter(formerly x.com)](https://techtuts.netlify.app/_astro/twitter-x.XX-07nhO.svg)](https://x.com/atomicustadh)
+[![GitHub](./src/assets/github.svg)](https://github.com/atomic-ustadh)
+[![LinkedIn](./src/assets/linkedin.svg)](https://linkedin.com/in/atomic-ustadh)
+[![Twitter(formerly x.com)](./src/assets/twitter-x.svg)](https://x.com/atomicustadh)
 
 [![Heart Icon](https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/icons/heart-fill.svg)](https://github.com/atomic-ustadh/)
-
