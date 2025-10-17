@@ -9,6 +9,7 @@ import BaseHead from "../../components/BaseHead.astro";
 import Footer from "../../components/Footer.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Header from "../../components/Header.astro";
+import Tag from "../../components/Tag.astro";
 // SITE_TITLE, SITE_DESCRIPTION: Constants for site metadata.
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 
@@ -141,6 +142,14 @@ const posts = (await getCollection("blog")).sort(
                   <p class="date">
                     <FormattedDate date={post.data.pubDate} />
                   </p>
+                  {/* Post tags */}
+                  {post.data.tags && post.data.tags.length > 0 && (
+                    <div class="post-tags">
+                      {post.data.tags.map((t) => (
+                        <Tag tag={t} />
+                      ))}
+                    </div>
+                  )}
                 </a>
               </li>
             ))

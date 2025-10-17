@@ -3,6 +3,9 @@ title: 'Just Read It'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 08 2022'
 heroImage: '../../assets/blog-placeholder-3.jpg'
+tags:
+    - setup
+    - tutorial
 ---
 #  Tech Tuts
 > Welcome to Tech Tuts, your go-to blog for all things tech! Dive into tutorials, tips, and insights.

@@ -1,0 +1,26 @@
+---
+// Simple tag pill component
+const { tag } = Astro.props as { tag: string };
+const slug = encodeURIComponent(tag.toLowerCase());
+---
+
+<a class="tag" href={`/tags/${slug}/`}>{tag}</a>
+
+<style>
+  .tag {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    margin: 0 0.25rem 0.25rem 0;
+    border-radius: 999px;
+    background: rgba(0, 123, 255, 0.08);
+    color: rgb(var(--black));
+    text-decoration: none;
+    font-size: 0.8rem;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .tag:hover {
+    background: rgba(0, 123, 255, 0.12);
+    box-shadow: var(--box-shadow);
+  }
+</style>
