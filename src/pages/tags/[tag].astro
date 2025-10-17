@@ -49,7 +49,7 @@ const posts = (await getCollection('blog'))
               <a href={`/blog/${p.id}/`}>{p.data.title}</a>
               <div class="meta">
                 <FormattedDate date={p.data.pubDate} />
-                {p.data.tags && p.data.tags.map((t) => <Tag tag={t} />)}
+                {p.data.tags && p.data.tags.map((t) => <TagComponent tag={t} />)}
               </div>
             </li>
           ))}
