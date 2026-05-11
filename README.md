@@ -144,7 +144,7 @@ Check out the official [Astro documentation](https://docs.astro.build)
 
 Visit my Portfolio on:
 
-[![My Website](./src/assets/globe.svg)](https://atomicustadh.pages.dev/)
+[![My Website](./src/assets/globe.svg)](https://atomicustadh.netlify.app/)
 [![GitHub](./src/assets/github.svg)](https://github.com/atomic-ustadh)
 [![LinkedIn](./src/assets/linkedin.svg)](https://linkedin.com/in/atomic-ustadh)
 [![Twitter(formerly x.com)](./src/assets/twitter-x.svg)](https://x.com/atomicustadh)
